@@ -9,23 +9,5 @@
   },
   "emmet.includeLanguages": {
     "javascript": "javascriptreact"
-  },
-  "eslint.validate": [
-    {
-      "language": "javascript",
-      "autoFix": true
-    },
-    {
-      "language": "javascriptreact",
-      "autoFix": true
-    },
-    {
-      "language": "typescript",
-      "autoFix": true
-    },
-    {
-      "language": "typescriptreact",
-      "autoFix": true
-    }
-  ]
+  }
 }

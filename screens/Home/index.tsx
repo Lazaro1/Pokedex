@@ -1,33 +1,26 @@
 import * as React from 'react'
-import { StyleSheet } from 'react-native'
-import { Text, View } from '../../components/Themed'
+import { FontAwesome } from '@expo/vector-icons'
+
 import { RootTabScreenProps } from '../../types'
 import * as S from './styles'
 
 export default function Home({ navigation }: RootTabScreenProps<'TabOne'>) {
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Página 3</Text>
-      <S.Container>
-        <Text style={styles.title}>Página 3</Text>
-      </S.Container>
-    </View>
+    <S.Wrapper>
+      <S.containerHeader>
+        <S.Title>Pokédex</S.Title>
+        <S.Label>
+          Search for Pokémon by name or using the National Pokédex number.
+        </S.Label>
+        <S.inputArea>
+          <FontAwesome
+            name="search"
+            size={15}
+            style={{ marginRight: 15, color: '#747476' }}
+          />
+          <S.Input placeholder="What Pokémon are you looking for?" />
+        </S.inputArea>
+      </S.containerHeader>
+    </S.Wrapper>
   )
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center'
-  },
-  title: {
-    fontSize: 20,
-    fontWeight: 'bold'
-  },
-  separator: {
-    marginVertical: 30,
-    height: 1,
-    width: '80%'
-  }
-})
