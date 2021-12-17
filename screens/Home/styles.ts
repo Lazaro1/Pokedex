@@ -1,35 +1,25 @@
 import styled from 'styled-components/native'
 
 export const Wrapper = styled.View`
-  flex: 1
+  flex: 1;
   background-color: white;
-
 `
-
-export const containerHeader = styled.View`
-  width: 414px;
-  height: 340px;
-  /* background: red; */
-`
-
-export const Logo = styled.Image.attrs({
+export const Icon = styled.Image.attrs({
   resizeMode: 'contain'
 })`
   margin-right: 25px;
 `
 
 export const containerFilter = styled.View`
-  margin-right: 15px;
-  padding: 15px;
-  height: 100px;
+  /* height: 100px; */
+  margin-top: 50px;
   flex-direction: row;
   justify-content: flex-end;
   align-items: flex-end;
-  /* background: red; */
 `
 
 export const containerSearch = styled.View`
-  padding: 30px;
+  padding: 20px;
 `
 
 export const Title = styled.Text`
@@ -52,23 +42,19 @@ export const Label = styled.Text`
 `
 
 export const inputArea = styled.View`
-  width: 334px;
-  height: 60px;
-  margin-left: -5px;
+  padding: 15px;
+
   border-radius: 10px;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   background: #f2f2f2;
-
-  margin-bottom: 50px;
 `
 
 export const Input = styled.TextInput``
 
 export const containerCard = styled.View`
   flex-direction: column;
-  margin-left: -15px;
   justify-content: center;
   align-items: center;
 `
