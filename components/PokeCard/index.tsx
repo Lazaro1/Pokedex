@@ -5,9 +5,13 @@ import * as S from './styles'
 
 const PokeCard: React.FC = () => {
   return (
-    <View>
-      <Text>ss</Text>
-    </View>
+    <S.pokeContainer>
+      <S.pokeContainerLeft>
+        <S.pokeNumber>#001</S.pokeNumber>
+        <S.pokeName>Bulbasaur</S.pokeName>
+      </S.pokeContainerLeft>
+      <S.pokeContainerRight></S.pokeContainerRight>
+    </S.pokeContainer>
   )
 }
 

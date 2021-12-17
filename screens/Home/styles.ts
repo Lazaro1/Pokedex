@@ -3,12 +3,12 @@ import styled from 'styled-components/native'
 export const Wrapper = styled.View`
   flex: 1
   background-color: white;
+
 `
 
 export const containerHeader = styled.View`
   width: 414px;
-  height: 291px;
-  /* padding: 30px; */
+  height: 340px;
   /* background: red; */
 `
 
@@ -16,12 +16,9 @@ export const Logo = styled.Image.attrs({
   resizeMode: 'contain'
 })`
   margin-right: 25px;
-  /* align-self: center; */
-  /* margin: auto auto 10px auto; */
 `
 
 export const containerFilter = styled.View`
-  /* width: 414px; */
   margin-right: 15px;
   padding: 15px;
   height: 100px;
@@ -63,6 +60,15 @@ export const inputArea = styled.View`
   justify-content: center;
   align-items: center;
   background: #f2f2f2;
+
+  margin-bottom: 50px;
 `
 
 export const Input = styled.TextInput``
+
+export const containerCard = styled.View`
+  flex-direction: column;
+  margin-left: -15px;
+  justify-content: center;
+  align-items: center;
+`

@@ -4,6 +4,7 @@ import { RootTabScreenProps } from '../../types'
 import iconpoint from '../../assets/images/iconpoint.png'
 import iconfilter from '../../assets/images/iconfilter.png'
 import iconarrow from '../../assets/images/iconarrow.png'
+import { FlatList } from 'react-native'
 import PokeCard from '../../components/PokeCard'
 import * as S from './styles'
 
@@ -31,7 +32,9 @@ export default function Home({ navigation }: RootTabScreenProps<'TabOne'>) {
           </S.inputArea>
         </S.containerSearch>
       </S.containerHeader>
-      <PokeCard />
+      <S.containerCard>
+        <PokeCard />
+      </S.containerCard>
     </S.Wrapper>
   )
 }
