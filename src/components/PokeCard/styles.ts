@@ -1,8 +1,9 @@
 import styled from 'styled-components/native'
 
-export const pokeContainer = styled.View`
+export const pokeContainer = styled.TouchableOpacity`
   flex-direction: row;
   border-radius: 10px;
+  margin-bottom: 30px;
   background-color: #8bbe8a;
 `
 
