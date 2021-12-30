@@ -4,9 +4,7 @@ export const Wrapper = styled.View`
   flex: 1;
   background-color: white;
 `
-export const Icon = styled.Image.attrs({
-  resizeMode: 'contain'
-})`
+export const Icon = styled.Image`
   margin-right: 25px;
 `
 

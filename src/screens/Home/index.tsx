@@ -1,20 +1,19 @@
 import * as React from 'react'
 import { FontAwesome } from '@expo/vector-icons'
-import { RootTabScreenProps } from '../../types'
-import iconpoint from '../../../src/assets/images/iconpoint.png'
-import iconfilter from '../../../src/assets/images/iconfilter.png'
-import iconarrow from '../../../src/assets/images/iconarrow.png'
-import { FlatList } from 'react-native'
+import iconpoint from '../../../src/assets/images/iconpoint.svg'
+import iconfilter from '../../../src/assets/images/iconfilter.svg'
+import Iconarrow from '../../assets/images/iconarrow.svg'
 import PokeCard from '../../components/PokeCard'
 import * as S from './styles'
+import { Header } from '../../components/Header'
 
-export default function Home({ navigation }: RootTabScreenProps<'TabOne'>) {
+export default function Home() {
   return (
     <S.Wrapper>
       <S.containerFilter>
-        <S.Icon source={iconpoint} />
-        <S.Icon source={iconarrow} />
-        <S.Icon source={iconfilter} />
+        <Header icon={iconpoint} />
+        <Header icon={iconfilter} />
+        <Header icon={Iconarrow} />
       </S.containerFilter>
       <S.containerSearch>
         <S.Title>Pokédex</S.Title>
