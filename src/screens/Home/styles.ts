@@ -1,8 +1,13 @@
 import styled from 'styled-components/native'
+import { getStatusBarHeight } from 'react-native-iphone-x-helper'
 
 export const Wrapper = styled.View`
   flex: 1;
   background-color: white;
+`
+
+export const Header = styled.View`
+  margin-top: ${getStatusBarHeight() + 7};
 `
 export const Icon = styled.Image`
   margin-right: 25px;

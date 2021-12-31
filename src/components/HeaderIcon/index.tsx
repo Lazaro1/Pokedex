@@ -9,10 +9,10 @@ type Props = RectButtonProps & {
   icon: React.FC<SvgProps>
 }
 
-export function Header({ icon: Icon, ...rest }: Props) {
+export function HeaderIcon({ icon: Icon, ...rest }: Props) {
   return (
-    <RectButton {...rest}>
+    <S.Container {...rest}>
       <Icon />
-    </RectButton>
+    </S.Container>
   )
 }
