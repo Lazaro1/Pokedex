@@ -4,7 +4,7 @@ export const pokeContainer = styled.TouchableOpacity`
   flex-direction: row;
   border-radius: 10px;
   margin-bottom: 30px;
-  background-color: #8bbe8a;
+  background-color: ${(props) => props.theme.colors.backgroundtypegrass};
 `
 
 export const pokeContainerLeft = styled.View`
@@ -16,14 +16,14 @@ export const pokeContainerLeft = styled.View`
 export const pokeNumber = styled.Text`
   font-size: 12px;
   line-height: 14px;
-  color: rgba(23, 23, 27, 0.6);
+  color: ${(props) => props.theme.colors.textnumber};
 `
 export const pokeName = styled.Text`
   margin-bottom: 10px;
   font-size: 26px;
   font-weight: bold;
   line-height: 31px;
-  color: #ffffff;
+  color: ${(props) => props.theme.colors.textwhite};
 `
 
 export const containerBadges = styled.View`
@@ -32,9 +32,12 @@ export const containerBadges = styled.View`
 
 export const pokeContainerRight = styled.View`
   width: 167px;
-  align-items: flex-start;
-  justify-content: center;
+  align-items: flex-end;
 `
 export const pokeballImage = styled.Image`
-  margin-left: 40px;
+  /* margin-left: 40px; */
+`
+export const pokemon = styled.View`
+  position: absolute;
+  bottom: 10px;
 `

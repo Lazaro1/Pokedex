@@ -2,8 +2,10 @@ import React from 'react'
 import * as S from './styles'
 import Badges from '../Badges'
 import pokeball from '../../assets/images/Pokeball.png'
+import bulbasaur from '../../assets/images/bulbasaur.svg'
+import { PokeImg } from '../PokeImg'
 
-const PokeCard: React.FC = () => {
+export function PokeCard() {
   return (
     <S.pokeContainer>
       <S.pokeContainerLeft>
@@ -16,9 +18,10 @@ const PokeCard: React.FC = () => {
       </S.pokeContainerLeft>
       <S.pokeContainerRight>
         <S.pokeballImage source={pokeball} />
+        <S.pokemon>
+          <PokeImg icon={bulbasaur} />
+        </S.pokemon>
       </S.pokeContainerRight>
     </S.pokeContainer>
   )
 }
-
-export default PokeCard
