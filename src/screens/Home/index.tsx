@@ -18,7 +18,7 @@ type PokeProps = {
 export default function Home() {
   const [pokeData, setPokeData] = useState<PokeProps>()
 
-  useEffect(() => getPoke(), [])
+  useEffect(() => getPoke() as any, [])
 
   const getPoke = async () => {
     const { data } = await api.get('/pokemon?limit=20&offset=1')
@@ -44,7 +44,7 @@ export default function Home() {
               size={15}
               style={{ marginRight: 15, color: '#747476' }}
             />
-            <S.Input placeholder="What Pokémon are you look      ing for?" />
+            <S.Input placeholder="What Pokémon are you looking for?" />
           </S.inputArea>
         </S.containerSearch>
       </S.Header>

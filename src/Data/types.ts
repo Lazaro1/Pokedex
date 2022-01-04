@@ -24,108 +24,126 @@ export const types = [
     id: 1,
     name: 'bug',
     imageUrl: bug,
-    color: theme.colors.typebug
+    color: theme.colors.typebug,
+    colorCard: theme.colors.backgroundtypebug
   },
   {
     id: 2,
     name: 'dark',
     imageUrl: dark,
-    color: theme.colors.typedark
+    color: theme.colors.typedark,
+    colorCard: theme.colors.backgroundtypedark
   },
   {
     id: 3,
     name: 'dragon',
     imageUrl: dragon,
-    color: theme.colors.typedragon
+    color: theme.colors.typedragon,
+    colorCard: theme.colors.backgroundtypedragon
   },
   {
     id: 4,
     name: 'electric',
     imageUrl: electric,
-    color: theme.colors.typeelectric
+    color: theme.colors.typeelectric,
+    colorCard: theme.colors.backgroundtypeelectric
   },
   {
     id: 5,
     name: 'fairy',
     imageUrl: fairy,
-    color: theme.colors.typefairy
+    color: theme.colors.typefairy,
+    colorCard: theme.colors.backgroundtypefairy
   },
   {
     id: 6,
     name: 'fighting',
     imageUrl: fighting,
-    color: theme.colors.typefighting
+    color: theme.colors.typefighting,
+    colorCard: theme.colors.backgroundtypefighting
   },
   {
     id: 7,
     name: 'fire',
     imageUrl: fire,
-    color: theme.colors.typefire
+    color: theme.colors.typefire,
+    colorCard: theme.colors.backgroundtypefire
   },
   {
     id: 8,
     name: 'flying',
     imageUrl: flying,
-    color: theme.colors.typeflying
+    color: theme.colors.typeflying,
+    colorCard: theme.colors.backgroundtypeflying
   },
   {
     id: 9,
     name: 'ghost',
     imageUrl: ghost,
-    color: theme.colors.typeghost
+    color: theme.colors.typeghost,
+    colorCard: theme.colors.backgroundtypeghost
   },
   {
     id: 10,
     name: 'grass',
     imageUrl: grass,
-    color: theme.colors.typegrass
+    color: theme.colors.typegrass,
+    colorCard: theme.colors.backgroundtypegrass
   },
   {
     id: 11,
     name: 'ground',
     imageUrl: ground,
-    color: theme.colors.typeground
+    color: theme.colors.typeground,
+    colorCard: theme.colors.backgroundtypeground
   },
   {
     id: 12,
     name: 'ice',
     imageUrl: ice,
-    color: theme.colors.typeice
+    color: theme.colors.typeice,
+    colorCard: theme.colors.backgroundtypeice
   },
   {
     id: 13,
     name: 'normal',
     imageUrl: normal,
-    color: theme.colors.typenormal
+    color: theme.colors.typenormal,
+    colorCard: theme.colors.backgroundtypenormal
   },
   {
     id: 14,
     name: 'poison',
     imageUrl: poison,
-    color: theme.colors.typepoison
+    color: theme.colors.typepoison,
+    colorCard: theme.colors.backgroundtypepoison
   },
   {
     id: 15,
     name: 'psychic',
     imageUrl: psychic,
-    color: theme.colors.typepsychic
+    color: theme.colors.typepsychic,
+    colorCard: theme.colors.backgroundtypepsychic
   },
   {
     id: 16,
     name: 'rock',
     imageUrl: rock,
-    color: theme.colors.typerock
+    color: theme.colors.typerock,
+    colorCard: theme.colors.backgroundtyperock
   },
   {
     id: 17,
     name: 'steel',
     imageUrl: steel,
-    color: theme.colors.typesteel
+    color: theme.colors.typesteel,
+    colorCard: theme.colors.backgroundtypesteel
   },
   {
     id: 18,
     name: 'water',
     imageUrl: water,
-    color: theme.colors.typewater
+    color: theme.colors.typewater,
+    colorCard: theme.colors.backgroundtypewater
   }
 ]

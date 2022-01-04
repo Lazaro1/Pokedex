@@ -16,7 +16,7 @@ type Props = {
 
 export function PokeCard({ data }: Props) {
   const [dataTypes, setDataTypes] = useState<any>()
-
+  const [containerColor, setContainerColor] = useState<string>('')
   const { name, url } = data
   const pokeNumber = url
     .replace('https://pokeapi.co/api/v2/pokemon/', '')
@@ -35,6 +35,7 @@ export function PokeCard({ data }: Props) {
         })
       })
       setDataTypes(novoArray)
+      setContainerColor(novoArray[0].colorCard)
     } catch (error) {
       throw new Error('Error')
     }
@@ -45,7 +46,10 @@ export function PokeCard({ data }: Props) {
   }, [])
 
   return (
-    <S.pokeContainer activeOpacity={0.8}>
+    <S.pokeContainer
+      style={{ backgroundColor: containerColor }}
+      activeOpacity={0.8}
+    >
       <S.pokeContainerLeft>
         <S.pokeNumber>{`#00${pokeNumber}`}</S.pokeNumber>
         <S.pokeName>{name}</S.pokeName>
