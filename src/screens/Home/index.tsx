@@ -17,48 +17,12 @@ type PokeProps = {
 
 export default function Home() {
   const [pokeData, setPokeData] = useState<PokeProps>()
-  const pokeData2 = [
-    {
-      id: 1,
-      name: 'Bulbasur',
-      type: 'Grass',
-      img: 'SVG'
-    },
-    {
-      id: 2,
-      name: 'Bulbasur',
-      type: 'Grass',
-      img: 'SVG'
-    },
-    {
-      id: 3,
-      name: 'Bulbasur',
-      type: 'Grass',
-      img: 'SVG'
-    },
-    {
-      id: 4,
-      name: 'Bulbasur',
-      type: 'Grass',
-      img: 'SVG'
-    },
-    {
-      id: 5,
-      name: 'Bulbasur',
-      type: 'Grass',
-      img: 'SVG'
-    }
-  ]
 
   useEffect(() => getPoke(), [])
 
   const getPoke = async () => {
-    const { data } = await api.get('/pokemon?limit=59&offset=1')
-    // setPokeData(data.results)
-    data.results.map(async (poke: any) => {
-      const response = await api.get(`/pokemon/${poke.name}`)
-      console.log(response)
-    })
+    const { data } = await api.get('/pokemon?limit=20&offset=1')
+    setPokeData(data.results)
   }
 
   return (
@@ -87,7 +51,7 @@ export default function Home() {
       <FlatList
         data={pokeData}
         keyExtractor={(item) => item.name}
-        renderItem={({ item }) => <PokeCard />}
+        renderItem={({ item }) => <PokeCard data={item} />}
         contentContainerStyle={{
           justifyContent: 'center',
           alignItems: 'center',

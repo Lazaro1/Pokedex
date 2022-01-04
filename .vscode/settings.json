@@ -9,5 +9,6 @@
   },
   "emmet.includeLanguages": {
     "javascript": "javascriptreact"
-  }
+  },
+  "totvsLanguageServer.welcomePage": false
 }

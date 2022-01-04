@@ -24,6 +24,7 @@ export const pokeName = styled.Text`
   font-weight: bold;
   line-height: 31px;
   color: ${(props) => props.theme.colors.textwhite};
+  text-transform: capitalize;
 `
 
 export const containerBadges = styled.View`
@@ -34,10 +35,10 @@ export const pokeContainerRight = styled.View`
   width: 167px;
   align-items: flex-end;
 `
-export const pokeballImage = styled.Image`
-  /* margin-left: 40px; */
-`
-export const pokemon = styled.View`
+export const pokeballImage = styled.Image``
+export const PokeUrlImg = styled.Image`
   position: absolute;
+  width: 130px;
+  height: 130px;
   bottom: 10px;
 `

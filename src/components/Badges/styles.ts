@@ -1,7 +1,7 @@
 import styled from 'styled-components/native'
 
 export const containerBadges = styled.View`
-  width: 61px;
+  width: 65px;
   height: 25px;
   margin-right: 10px;
   flex-direction: row;
@@ -20,4 +20,5 @@ export const Name = styled.Text`
   align-items: center;
   justify-content: center;
   color: #ffffff;
+  text-transform: capitalize;
 `
