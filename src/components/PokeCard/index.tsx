@@ -7,7 +7,7 @@ import { PokeImg } from '../PokeImg'
 
 export function PokeCard() {
   return (
-    <S.pokeContainer>
+    <S.pokeContainer activeOpacity={0.8}>
       <S.pokeContainerLeft>
         <S.pokeNumber>#001</S.pokeNumber>
         <S.pokeName>Bulbasaur</S.pokeName>

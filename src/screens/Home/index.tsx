@@ -1,4 +1,4 @@
-import * as React from 'react'
+import React, { useEffect, useState } from 'react'
 import { FontAwesome } from '@expo/vector-icons'
 import iconpoint from '../../../src/assets/images/iconpoint.svg'
 import iconfilter from '../../../src/assets/images/iconfilter.svg'
@@ -7,9 +7,17 @@ import { PokeCard } from '../../components/PokeCard'
 import * as S from './styles'
 import { HeaderIcon } from '../../components/HeaderIcon'
 import { FlatList } from 'react-native-gesture-handler'
+import { api } from '../../services/api'
+import { Alert } from 'react-native'
+
+type PokeProps = {
+  name: string
+  url: string
+}
 
 export default function Home() {
-  const pokeData = [
+  const [pokeData, setPokeData] = useState<PokeProps>()
+  const pokeData2 = [
     {
       id: 1,
       name: 'Bulbasur',
@@ -42,6 +50,17 @@ export default function Home() {
     }
   ]
 
+  useEffect(() => getPoke(), [])
+
+  const getPoke = async () => {
+    const { data } = await api.get('/pokemon?limit=59&offset=1')
+    // setPokeData(data.results)
+    data.results.map(async (poke: any) => {
+      const response = await api.get(`/pokemon/${poke.name}`)
+      console.log(response)
+    })
+  }
+
   return (
     <S.Wrapper>
       <S.Header>
@@ -61,13 +80,13 @@ export default function Home() {
               size={15}
               style={{ marginRight: 15, color: '#747476' }}
             />
-            <S.Input placeholder="What Pokémon are you looking for?" />
+            <S.Input placeholder="What Pokémon are you look      ing for?" />
           </S.inputArea>
         </S.containerSearch>
       </S.Header>
       <FlatList
         data={pokeData}
-        keyExtractor={(item) => item.id}
+        keyExtractor={(item) => item.name}
         renderItem={({ item }) => <PokeCard />}
         contentContainerStyle={{
           justifyContent: 'center',
