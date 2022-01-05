@@ -4,6 +4,7 @@ import { Badges } from '../Badges'
 import pokeball from '../../assets/images/Pokeball.png'
 import { types } from '../../Data/types'
 import { api } from '../../services/api'
+import { usePoke } from '../../hooks/usePoke'
 
 type PokeProps = {
   name: string
@@ -17,6 +18,8 @@ type Props = {
 export function PokeCard({ data }: Props) {
   const [dataTypes, setDataTypes] = useState<any>()
   const [containerColor, setContainerColor] = useState<string>('')
+  const { handleTypes } = usePoke()
+
   const { name, url } = data
   const pokeNumber = url
     .replace('https://pokeapi.co/api/v2/pokemon/', '')
@@ -25,6 +28,7 @@ export function PokeCard({ data }: Props) {
 
   const getTypes = async () => {
     try {
+      handleTypes(url)
       const { data } = await api.get(`/pokemon/${pokeNumber}`)
       const novoArray = [] as any
       types.map((item) => {

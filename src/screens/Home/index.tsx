@@ -8,28 +8,18 @@ import * as S from './styles'
 import { HeaderIcon } from '../../components/HeaderIcon'
 import { FlatList } from 'react-native-gesture-handler'
 import { api } from '../../services/api'
-import { Alert } from 'react-native'
-
-type PokeProps = {
-  name: string
-  url: string
-}
+import { usePoke } from '../../hooks/usePoke'
 
 export default function Home() {
-  const [pokeData, setPokeData] = useState<PokeProps>()
+  const { getPokemon, page, pokeData, nextPage } = usePoke()
 
-  useEffect(() => getPoke() as any, [])
-
-  const getPoke = async () => {
-    const { data } = await api.get('/pokemon?limit=20&offset=1')
-    setPokeData(data.results)
-  }
+  useEffect(() => getPokemon() as any, [])
 
   return (
     <S.Wrapper>
       <S.Header>
         <S.containerFilter>
-          <HeaderIcon icon={iconpoint} />
+          <HeaderIcon icon={iconpoint} onPress={getPokemon} />
           <HeaderIcon icon={iconfilter} />
           <HeaderIcon icon={Iconarrow} />
         </S.containerFilter>
@@ -50,13 +40,14 @@ export default function Home() {
       </S.Header>
       <FlatList
         data={pokeData}
-        keyExtractor={(item) => item.name}
+        keyExtractor={(item) => item.id}
         renderItem={({ item }) => <PokeCard data={item} />}
         contentContainerStyle={{
           justifyContent: 'center',
           alignItems: 'center',
           paddingTop: 20
         }}
+        // onEndReached={() => nextPage(page + 50)}
       />
     </S.Wrapper>
   )

@@ -7,6 +7,7 @@ import { useFonts } from 'expo-font'
 import AppLoading from 'expo-app-loading'
 
 import theme from './src/global/styles/theme'
+import { PokemonProvider } from './src/hooks/usePoke'
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -19,7 +20,9 @@ export default function App() {
 
   return (
     <ThemeProvider theme={theme}>
-      <Home />
+      <PokemonProvider>
+        <Home />
+      </PokemonProvider>
     </ThemeProvider>
   )
 }
