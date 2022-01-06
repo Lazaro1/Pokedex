@@ -1,5 +1,5 @@
 import styled from 'styled-components/native'
-import { getStatusBarHeight } from 'react-native-iphone-x-helper'
+import { getStatusBarHeight } from 'react-native-status-bar-height'
 
 export const Wrapper = styled.View`
   flex: 1;

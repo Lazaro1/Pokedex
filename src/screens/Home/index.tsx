@@ -10,11 +10,13 @@ import { FlatList } from 'react-native-gesture-handler'
 import { api } from '../../services/api'
 import { usePoke } from '../../hooks/usePoke'
 import { Modal } from '../../components/Modal'
+import { useNavigation } from '@react-navigation/native'
 
 export default function Home() {
   const [openModal, setOpenModal] = useState(false)
   const { getPokemon, page, pokeData, nextPage } = usePoke()
 
+  const navigation = useNavigation()
   useEffect(() => getPokemon() as any, [])
 
   function handleCloseModal() {
@@ -23,6 +25,10 @@ export default function Home() {
 
   function handleOpenModal() {
     setOpenModal(true)
+  }
+
+  function handlePokeDetails() {
+    navigation.navigate('PokeDetails')
   }
 
   return (
@@ -51,7 +57,9 @@ export default function Home() {
       <FlatList
         data={pokeData}
         keyExtractor={(item) => item.id}
-        renderItem={({ item }) => <PokeCard data={item} />}
+        renderItem={({ item }) => (
+          <PokeCard data={item} onPress={handlePokeDetails} />
+        )}
         contentContainerStyle={{
           justifyContent: 'center',
           alignItems: 'center',

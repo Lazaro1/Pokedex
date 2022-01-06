@@ -4,18 +4,18 @@ import { Badges } from '../Badges'
 import pokeball from '../../assets/images/Pokeball.png'
 import { types } from '../../Data/types'
 import { api } from '../../services/api'
-import { usePoke } from '../../hooks/usePoke'
+import { TouchableOpacityProps } from 'react-native'
 
 type PokeProps = {
   name: string
   url: string
 }
 
-type Props = {
+type Props = TouchableOpacityProps & {
   data: PokeProps
 }
 
-export function PokeCard({ data }: Props) {
+export function PokeCard({ data, ...rest }: Props) {
   const [dataTypes, setDataTypes] = useState<any>()
   const [containerColor, setContainerColor] = useState<string>('')
 
@@ -51,6 +51,7 @@ export function PokeCard({ data }: Props) {
     <S.pokeContainer
       style={{ backgroundColor: containerColor }}
       activeOpacity={0.8}
+      {...rest}
     >
       <S.pokeContainerLeft>
         <S.pokeNumber>{`#00${pokeNumber}`}</S.pokeNumber>
