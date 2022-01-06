@@ -36,6 +36,7 @@ export const pokeContainerRight = styled.View`
   align-items: flex-end;
 `
 export const pokeballImage = styled.Image``
+
 export const PokeUrlImg = styled.Image`
   position: absolute;
   width: 130px;

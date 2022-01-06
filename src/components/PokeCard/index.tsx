@@ -18,7 +18,6 @@ type Props = {
 export function PokeCard({ data }: Props) {
   const [dataTypes, setDataTypes] = useState<any>()
   const [containerColor, setContainerColor] = useState<string>('')
-  const { handleTypes } = usePoke()
 
   const { name, url } = data
   const pokeNumber = url
@@ -28,7 +27,6 @@ export function PokeCard({ data }: Props) {
 
   const getTypes = async () => {
     try {
-      handleTypes(url)
       const { data } = await api.get(`/pokemon/${pokeNumber}`)
       const novoArray = [] as any
       types.map((item) => {

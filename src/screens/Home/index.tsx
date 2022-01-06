@@ -9,19 +9,29 @@ import { HeaderIcon } from '../../components/HeaderIcon'
 import { FlatList } from 'react-native-gesture-handler'
 import { api } from '../../services/api'
 import { usePoke } from '../../hooks/usePoke'
+import { Modal } from '../../components/Modal'
 
 export default function Home() {
+  const [openModal, setOpenModal] = useState(false)
   const { getPokemon, page, pokeData, nextPage } = usePoke()
 
   useEffect(() => getPokemon() as any, [])
+
+  function handleCloseModal() {
+    setOpenModal(false)
+  }
+
+  function handleOpenModal() {
+    setOpenModal(true)
+  }
 
   return (
     <S.Wrapper>
       <S.Header>
         <S.containerFilter>
-          <HeaderIcon icon={iconpoint} onPress={getPokemon} />
-          <HeaderIcon icon={iconfilter} />
-          <HeaderIcon icon={Iconarrow} />
+          <HeaderIcon icon={iconpoint} onPress={handleOpenModal} />
+          <HeaderIcon icon={iconfilter} onPress={handleOpenModal} />
+          <HeaderIcon icon={Iconarrow} onPress={handleOpenModal} />
         </S.containerFilter>
         <S.containerSearch>
           <S.Title>Pokédex</S.Title>
@@ -49,6 +59,9 @@ export default function Home() {
         }}
         // onEndReached={() => nextPage(page + 50)}
       />
+      <Modal visible={openModal} closeModal={handleCloseModal}>
+        <S.Label>TEste</S.Label>
+      </Modal>
     </S.Wrapper>
   )
 }

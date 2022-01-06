@@ -13,7 +13,6 @@ type PokemonContextData = {
   pokeData: PokeProps
   nextPage: (page: number) => void
   page: number
-  handleTypes: (url: string) => Promise<void>
 }
 
 type PokemonProviderProps = {
@@ -41,16 +40,6 @@ function PokemonProvider({ children }: PokemonProviderProps) {
     setPokeData(data.results)
   }
 
-  async function handleTypes(url: string) {
-    const pokeNumber = url
-      .replace('https://pokeapi.co/api/v2/pokemon/', '')
-      .replace('/', '')
-    const imgUrl = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokeNumber}.png`
-
-    const { data } = await api.get(`/pokemon/${pokeNumber}`)
-    console.log(data)
-  }
-
   const nextPage = (page: number) => {
     setPage(page)
     console.log(page)
@@ -60,11 +49,10 @@ function PokemonProvider({ children }: PokemonProviderProps) {
     <PokemonContext.Provider
       value={{
         loading,
-        getPokemon,
         pokeData,
-        nextPage,
         page,
-        handleTypes
+        getPokemon,
+        nextPage
       }}
     >
       {children}

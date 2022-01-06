@@ -8,6 +8,7 @@ import AppLoading from 'expo-app-loading'
 
 import theme from './src/global/styles/theme'
 import { PokemonProvider } from './src/hooks/usePoke'
+import { Routes } from './src/routes'
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -21,7 +22,7 @@ export default function App() {
   return (
     <ThemeProvider theme={theme}>
       <PokemonProvider>
-        <Home />
+        <Routes />
       </PokemonProvider>
     </ThemeProvider>
   )
