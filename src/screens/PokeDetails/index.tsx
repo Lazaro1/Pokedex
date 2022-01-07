@@ -9,11 +9,21 @@ import * as S from './styles'
 
 export function PokeDetails() {
   const navigation = useNavigation()
+  const imgUrl = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png`
   return (
     <S.Container>
       <S.ContainerHeader>
-        {/* <HeaderIcon icon={Back} onPress={() => navigation.goBack()} /> */}
-        <S.TextBackgroundHeader>BULBASAUR</S.TextBackgroundHeader>
+        <HeaderIcon icon={Back} onPress={() => navigation.goBack()} />
+        {/* <S.TextBackgroundHeader>BULBASAUR</S.TextBackgroundHeader> */}
+        <S.HeaderInfo>
+          <S.pokeContainerLeftt>
+            <S.PokeUrlImg
+              source={{
+                uri: imgUrl
+              }}
+            />
+          </S.pokeContainerLeftt>
+        </S.HeaderInfo>
       </S.ContainerHeader>
     </S.Container>
   )

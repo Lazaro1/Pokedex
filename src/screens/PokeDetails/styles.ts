@@ -7,10 +7,9 @@ export const Container = styled.View`
 `
 export const ContainerHeader = styled.View`
   margin-top: ${getStatusBarHeight() + 42};
-  /* padding-horizontal: 30px; */
   width: 585px;
-
-  /* background-color: red; */
+  padding: 15px;
+  flex-direction: row;
 `
 
 export const TextBackgroundHeader = styled.Text`
@@ -20,4 +19,22 @@ export const TextBackgroundHeader = styled.Text`
   font-size: 100px;
   line-height: 119px;
   text-align: center;
+`
+
+export const HeaderInfo = styled.View`
+  flex: 1;
+  width: 414px;
+
+  margin-top: 30px;
+  background-color: ${(props) => props.theme.colors.backgroundtypedark};
+`
+
+export const pokeContainerLeftt = styled.View`
+  width: 167px;
+  align-items: flex-end;
+`
+
+export const PokeUrlImg = styled.Image`
+  width: 130px;
+  height: 130px;
 `
