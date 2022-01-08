@@ -12,24 +12,23 @@ export const ContainerHeader = styled.View`
   flex-direction: row;
 `
 
-export const TextBackgroundHeader = styled.Text`
-  font-family: 'SF_Pro_Display';
-  font-style: normal;
-  font-weight: bold;
-  font-size: 100px;
-  line-height: 119px;
-  text-align: center;
-`
+// export const TextBackgroundHeader = styled.Text`
+//   font-family: 'SF_Pro_Display';
+//   font-style: normal;
+//   font-weight: bold;
+//   font-size: 100px;
+//   line-height: 119px;
+//   text-align: center;
+// `
 
 export const HeaderInfo = styled.View`
   flex: 1;
-  width: 414px;
-
+  flex-direction: row;
   margin-top: 30px;
-  background-color: ${(props) => props.theme.colors.backgroundtypedark};
 `
 
 export const pokeContainerLeftt = styled.View`
+  /* flex: 1; */
   width: 167px;
   align-items: flex-end;
 `
@@ -37,4 +36,23 @@ export const pokeContainerLeftt = styled.View`
 export const PokeUrlImg = styled.Image`
   width: 130px;
   height: 130px;
+`
+export const pokeContainerRight = styled.View`
+  width: 167px;
+  align-items: flex-start;
+  justify-content: center;
+  margin-left: 20px;
+`
+export const pokeNumber = styled.Text`
+  font-size: 12px;
+  line-height: 14px;
+  color: ${(props) => props.theme.colors.textnumber};
+`
+export const pokeName = styled.Text`
+  margin-bottom: 10px;
+  font-size: 26px;
+  font-weight: bold;
+  line-height: 31px;
+  color: ${(props) => props.theme.colors.textwhite};
+  text-transform: capitalize;
 `

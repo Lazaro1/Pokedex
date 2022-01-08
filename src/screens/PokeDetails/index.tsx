@@ -13,7 +13,7 @@ export function PokeDetails() {
   return (
     <S.Container>
       <S.ContainerHeader>
-        <HeaderIcon icon={Back} onPress={() => navigation.goBack()} />
+        {/* <HeaderIcon icon={Back} onPress={() => navigation.goBack()} /> */}
         {/* <S.TextBackgroundHeader>BULBASAUR</S.TextBackgroundHeader> */}
         <S.HeaderInfo>
           <S.pokeContainerLeftt>
@@ -23,6 +23,10 @@ export function PokeDetails() {
               }}
             />
           </S.pokeContainerLeftt>
+          <S.pokeContainerRight>
+            <S.pokeNumber>{`#001`}</S.pokeNumber>
+            <S.pokeName>BULBASAUR</S.pokeName>
+          </S.pokeContainerRight>
         </S.HeaderInfo>
       </S.ContainerHeader>
     </S.Container>
