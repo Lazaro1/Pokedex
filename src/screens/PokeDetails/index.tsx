@@ -2,19 +2,32 @@ import React from 'react'
 import { Text, View } from 'react-native'
 import { useNavigation } from '@react-navigation/native'
 import Back from '../../assets/icons/back.svg'
+import bug from '../../assets/images/bug.png'
 
 import { HeaderIcon } from '../../components/HeaderIcon'
 
 import * as S from './styles'
+import theme from '../../global/styles/theme'
+import { Badges } from '../../components/Badges'
 
 export function PokeDetails() {
   const navigation = useNavigation()
   const imgUrl = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png`
+
+  const data = {
+    id: 1,
+    name: 'bug',
+    imageUrl: bug,
+    color: theme.colors.typebug
+  }
+
   return (
     <S.Container>
       <S.ContainerHeader>
-        {/* <HeaderIcon icon={Back} onPress={() => navigation.goBack()} /> */}
-        {/* <S.TextBackgroundHeader>BULBASAUR</S.TextBackgroundHeader> */}
+        <S.ContainerArrow>
+          <HeaderIcon icon={Back} onPress={() => navigation.goBack()} />
+        </S.ContainerArrow>
+        {/* <S.TextBackgroundHeader>bulbasaur</S.TextBackgroundHeader> */}
         <S.HeaderInfo>
           <S.pokeContainerLeftt>
             <S.PokeUrlImg
@@ -26,6 +39,10 @@ export function PokeDetails() {
           <S.pokeContainerRight>
             <S.pokeNumber>{`#001`}</S.pokeNumber>
             <S.pokeName>BULBASAUR</S.pokeName>
+            <S.containerBadges>
+              <Badges data={data} />
+              <Badges data={data} />
+            </S.containerBadges>
           </S.pokeContainerRight>
         </S.HeaderInfo>
       </S.ContainerHeader>

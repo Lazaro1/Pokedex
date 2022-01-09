@@ -1,7 +1,4 @@
 import React from 'react'
-import { View, Text } from 'react-native'
-import leaf from '../../assets/images/folha.png'
-import { PokeImg } from '../PokeImg'
 
 import * as S from './styles'
 

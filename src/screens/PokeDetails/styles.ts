@@ -12,13 +12,25 @@ export const ContainerHeader = styled.View`
   flex-direction: row;
 `
 
+export const ContainerArrow = styled.View`
+  position: absolute;
+  left: 12%;
+`
+
 // export const TextBackgroundHeader = styled.Text`
+//   position: absolute;
+//   top: 50%;
+//   left: 12%;
+//   font-size: 50px;
+//   text-transform: uppercase;
+
 //   font-family: 'SF_Pro_Display';
-//   font-style: normal;
 //   font-weight: bold;
-//   font-size: 100px;
-//   line-height: 119px;
-//   text-align: center;
+//   color: rgb(159, 223, 150);
+
+//   &:after {
+//     content: ' teste';
+//   }
 // `
 
 export const HeaderInfo = styled.View`
@@ -55,4 +67,7 @@ export const pokeName = styled.Text`
   line-height: 31px;
   color: ${(props) => props.theme.colors.textwhite};
   text-transform: capitalize;
+`
+export const containerBadges = styled.View`
+  flex-direction: row;
 `
