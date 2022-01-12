@@ -1,6 +1,6 @@
 import React from 'react'
 import { Text, View } from 'react-native'
-import { useNavigation } from '@react-navigation/native'
+import { NavigationContainer, useNavigation } from '@react-navigation/native'
 import Back from '../../assets/icons/back.svg'
 import bug from '../../assets/images/bug.png'
 
@@ -9,6 +9,7 @@ import { HeaderIcon } from '../../components/HeaderIcon'
 import * as S from './styles'
 import theme from '../../global/styles/theme'
 import { Badges } from '../../components/Badges'
+import { TabNavigator } from '../../routes/TabNavigator'
 
 export function PokeDetails() {
   const navigation = useNavigation()
@@ -46,6 +47,9 @@ export function PokeDetails() {
           </S.pokeContainerRight>
         </S.HeaderInfo>
       </S.ContainerHeader>
+      <NavigationContainer independent={true}>
+        <TabNavigator />
+      </NavigationContainer>
     </S.Container>
   )
 }
