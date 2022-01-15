@@ -1,17 +1,20 @@
 import React from 'react'
 import { Text } from 'react-native'
-import { SvgProps } from 'react-native-svg'
 
-import * as S from './styles'
-
-type Props = {
-  icon: React.FC<SvgProps>
-}
+import * as S from '../../global/styles/global'
 
 export function About() {
   return (
-    <S.Container>
-      <Text>About</Text>
-    </S.Container>
+    <S.GlobalContainer>
+      <S.ContainerInfo
+      // style={{ borderTopRightRadius: 50, borderTopLeftRadius: 50 }}
+      >
+        <S.Title>
+          Bulbasaur can be seen napping in bright sunlight.{'\n'} There is a
+          seed on its back. By soaking up the{'\n'} sun's rays, the seed grows
+          progressively larger.
+        </S.Title>
+      </S.ContainerInfo>
+    </S.GlobalContainer>
   )
 }

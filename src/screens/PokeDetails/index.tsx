@@ -19,7 +19,8 @@ export function PokeDetails() {
     id: 1,
     name: 'bug',
     imageUrl: bug,
-    color: theme.colors.typebug
+    color: theme.colors.typebug,
+    colorBackground: theme.colors.backgroundtypegrass
   }
 
   return (
@@ -48,7 +49,7 @@ export function PokeDetails() {
         </S.HeaderInfo>
       </S.ContainerHeader>
       <NavigationContainer independent={true}>
-        <TabNavigator />
+        <TabNavigator data={data} />
       </NavigationContainer>
     </S.Container>
   )
